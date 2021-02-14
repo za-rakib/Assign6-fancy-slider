@@ -46,7 +46,7 @@ const selectItem = (event, img) => {
     sliders.push(img);
   } else {
     //alert('Hey, Already added !')
-    sliders.pop(img);
+    sliders.splice(item ,1);
   }
 }
 
@@ -119,10 +119,10 @@ const changeSlide = (index) => {
   }
 
   items.forEach(item => {
-    item.style.display = "none"
+    item.style.display = "none";
   })
 
-  items[index].style.display = "block"
+  items[index].style.display = "block";
 }
 
 searchBtn.addEventListener('click', function () {
@@ -145,4 +145,16 @@ const togglerSpinner = (show) =>{
  else{
   spinner.classList.add('d-none');
  }
+}
+
+// Close slider 
+const sliderClose = ()=> {
+  document.querySelector('.main').style.display = 'none';
+  imagesArea.style.display = 'block';
+  sliders = [];
+  clearInterval(timer);
+  const item = document.getElementsByClassName('added');
+  for (let i = 0; i <= item.length+1; i++) {
+    item[0].classList.remove('added');
+  }
 }
