@@ -151,10 +151,4 @@ const togglerSpinner = (show) =>{
 const sliderClose = ()=> {
   document.querySelector('.main').style.display = 'none';
   imagesArea.style.display = 'block';
-  sliders = [];
-  clearInterval(timer);
-  const item = document.getElementsByClassName('added');
-  for (let i = 0; i <= item.length+1; i++) {
-    item[0].classList.remove('added');
-  }
 }
